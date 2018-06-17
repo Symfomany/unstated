@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Subscribe } from "unstated";
 import TodoContainer from "./TodoContainer";
-import MessageContainer from "./MessageContainer";
 
 /**
  *

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Subscribe } from "unstated";
 import TodoContainer from "./TodoContainer";
-import MessageContainer from "./MessageContainer";
 
 /**
  *
@@ -17,9 +16,8 @@ class AddTodo extends Component {
     this.inputRef = React.createRef();
   }
 
-  handleClick(addTodo, addMess) {
+  handleClick(addTodo) {
     if (this.inputRef.current.value) {
-      addMess(this.inputRef.current.value);
       addTodo(this.inputRef.current.value);
       this.inputRef.current.value = "";
     }
@@ -29,16 +27,9 @@ class AddTodo extends Component {
       <div>
         <input type="text" placeholder="your new todo" ref={this.inputRef} />
 
-        <Subscribe to={[TodoContainer, MessageContainer]}>
-          {(todoContainer, messageContainer) => (
-            <button
-              onClick={() =>
-                this.handleClick(
-                  todoContainer.addTodo,
-                  messageContainer.addMess
-                )
-              }
-            >
+        <Subscribe to={[TodoContainer]}>
+          {todoContainer => (
+            <button onClick={() => this.handleClick(todoContainer.addTodo)}>
               Ajouter la todo
             </button>
           )}

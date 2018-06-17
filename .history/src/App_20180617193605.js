@@ -5,7 +5,6 @@ import { Provider } from "unstated";
 
 import Todos from "./Todos";
 import AddTodo from "./AddTodo";
-import Display from "./Display";
 
 class App extends Component {
   render() {
@@ -14,7 +13,6 @@ class App extends Component {
         <Provider>
           <AddTodo />
           <Todos />
-          <Display />
         </Provider>
       </div>
     );

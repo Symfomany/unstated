@@ -25,11 +25,9 @@ class TodoContainer extends Container {
   }
 
   getNb() {
-    return this.state.todos.length;
+    return this.setState.todos.length;
   }
-  getNbActive() {
-    return this.state.todos.filter(elt => elt.marked === false).length;
-  }
+
   addTodo(todo) {
     const newTodo = { id: this.id++, marked: false, description: todo };
     this.setState({
