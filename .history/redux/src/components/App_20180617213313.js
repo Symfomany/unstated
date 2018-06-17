@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { SimpleAction, SimpleAddAction, SimpleRemoveAction } from "../actions";
+import { SimpleAction, SimpleAddAction } from "../actions";
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +8,6 @@ class App extends Component {
     this.state = {};
     this.simpleAction = this.simpleAction.bind(this);
     this.addAction = this.addAction.bind(this);
-    this.removeAction = this.removeAction.bind(this);
   }
 
   simpleAction() {
@@ -19,9 +18,6 @@ class App extends Component {
     this.props.SimpleAddAction();
   }
 
-  removeAction() {
-    this.props.SimpleRemoveAction();
-  }
   render() {
     return (
       <div>
@@ -30,7 +26,6 @@ class App extends Component {
         </p>
         <button onClick={this.simpleAction}>Test redux action</button>
         <button onClick={this.addAction}>Add one</button>
-        <button onClick={this.removeAction}>Remove one</button>
         <p>{this.props.SimpleReducer.nb}</p>
         <pre>{JSON.stringify(this.props)}</pre>
       </div>
@@ -43,8 +38,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   SimpleAction: () => dispatch(SimpleAction()),
-  SimpleAddAction: () => dispatch(SimpleAddAction()),
-  SimpleRemoveAction: () => dispatch(SimpleRemoveAction())
+  SimpleAddAction: () => dispatch(SimpleAddAction())
 });
 export default connect(
   mapStateToProps,

@@ -1,0 +1,2 @@
+export const SIMPLE_ACTION = "SIMPLE_ACTION";
+export const SIMPLE_ADD_ACTION = "SIMPLE_ADD_ACTION";

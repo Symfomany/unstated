@@ -30,7 +30,7 @@ class App extends Component {
         </p>
         <button onClick={this.simpleAction}>Test redux action</button>
         <button onClick={this.addAction}>Add one</button>
-        <button onClick={this.removeAction}>Remove one</button>
+        <button onClick={this.addAction}>Remove one</button>
         <p>{this.props.SimpleReducer.nb}</p>
         <pre>{JSON.stringify(this.props)}</pre>
       </div>

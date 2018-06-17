@@ -8,8 +8,7 @@ import {
  * initite state
  */
 const initialState = {
-  nb: 0,
-  visible: true
+  nb: 0
 };
 
 const SimpleReducer = (state = initialState, action) => {
@@ -17,9 +16,7 @@ const SimpleReducer = (state = initialState, action) => {
     case SIMPLE_ACTION:
       return { result: action.payload };
     case SIMPLE_ADD_ACTION:
-      return { ...state, ...{ nb: state.nb + action.payload, visible: true } };
-    case SIMPLE_REMOVE_ACTION:
-      return { nb: state.nb - action.payload, visible: false };
+      return { nb: state.nb + action.payload };
     default:
       return state;
   }
