@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import {
   SimpleAddAction,
   SimpleRemoveAction,
-  SimpleVisibleAction
+  SimpleVisibleAction,
+  SimpleResetAction
 } from "../actions";
 import Display from "../components/Display";
 
@@ -14,12 +15,16 @@ class AppContainer extends Component {
     this.addAction = this.addAction.bind(this);
     this.removeAction = this.removeAction.bind(this);
     this.handleVisible = this.handleVisible.bind(this);
+    this.resetAction = this.resetAction.bind(this);
   }
 
   addAction() {
     this.props.SimpleAddAction();
   }
 
+  resetAction() {
+    this.props.SimpleResetAction();
+  }
   removeAction() {
     this.props.SimpleRemoveAction();
   }
@@ -35,6 +40,7 @@ class AppContainer extends Component {
         </p>
         <button onClick={this.addAction}>Add one</button>
         <button onClick={this.removeAction}>Remove one</button>
+        <button onClick={this.resetAction}>Reset</button>
 
         <button onClick={this.handleVisible}>
           Rendre Visible/Invisible le message
@@ -55,7 +61,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   SimpleAddAction: () => dispatch(SimpleAddAction()),
   SimpleRemoveAction: () => dispatch(SimpleRemoveAction()),
-  SimpleVisibleAction: () => dispatch(SimpleVisibleAction())
+  SimpleVisibleAction: () => dispatch(SimpleVisibleAction()),
+  SimpleResetAction: () => dispatch(SimpleResetAction())
 });
 export default connect(
   mapStateToProps,

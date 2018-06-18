@@ -1,7 +1,8 @@
 import {
   SIMPLE_ADD_ACTION,
   SIMPLE_REMOVE_ACTION,
-  SIMPLE_VISIBLE
+  SIMPLE_VISIBLE,
+  SIMPLE_RESET
 } from "../constants";
 
 /*
@@ -18,8 +19,17 @@ const SimpleAddAction = () => dispatch => {
   dispatch({ type: SIMPLE_ADD_ACTION, payload: 1 });
 };
 
+const SimpleResetAction = () => dispatch => {
+  dispatch({ type: SIMPLE_RESET, payload: null });
+};
+
 const SimpleVisibleAction = () => dispatch => {
   dispatch({ type: SIMPLE_VISIBLE, payload: null });
 };
 
-export { SimpleAddAction, SimpleRemoveAction, SimpleVisibleAction };
+export {
+  SimpleAddAction,
+  SimpleRemoveAction,
+  SimpleVisibleAction,
+  SimpleResetAction
+};
