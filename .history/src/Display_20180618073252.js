@@ -3,7 +3,7 @@ import { Subscribe } from "unstated";
 import TodoContainer from "./TodoContainer";
 import Inactive from "./Inactive";
 import MessageContainer from "./MessageContainer";
-import withVisible from "./hoc/withVisible";
+import withVisible from "../hoc/withVisible";
 
 class Display extends React.Component {
   render() {
@@ -30,11 +30,7 @@ class Display extends React.Component {
           )}
         </Subscribe>
 
-        <button onClick={this.props.handleVisible}>
-          {this.props.visible === true
-            ? "Je suis visible"
-            : "Je suis invisible"}
-        </button>
+        <button>Je suis visible</button>
       </div>
     );
   }

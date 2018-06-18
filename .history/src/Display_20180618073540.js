@@ -31,9 +31,7 @@ class Display extends React.Component {
         </Subscribe>
 
         <button onClick={this.props.handleVisible}>
-          {this.props.visible === true
-            ? "Je suis visible"
-            : "Je suis invisible"}
+          {this.props.visible ? "Je suis visible" : "Je suis invisible"}
         </button>
       </div>
     );

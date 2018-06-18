@@ -6,7 +6,6 @@ import { Provider } from "unstated";
 import Todos from "./Todos";
 import AddTodo from "./AddTodo";
 import Display from "./Display";
-import Message from "./Message";
 
 class App extends Component {
   render() {
@@ -16,7 +15,6 @@ class App extends Component {
           <AddTodo />
           <Todos />
           <Display />
-          <Message />
         </Provider>
       </div>
     );
