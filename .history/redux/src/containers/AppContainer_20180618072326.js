@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { SimpleAction, SimpleAddAction, SimpleRemoveAction } from "../actions";
+import {
+  SimpleAddAction,
+  SimpleRemoveAction,
+  SimpleVisibleAction
+} from "../actions";
+import Display from "../components/Display";
 
-class App extends Component {
+class AppContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.simpleAction = this.simpleAction.bind(this);
     this.addAction = this.addAction.bind(this);
     this.removeAction = this.removeAction.bind(this);
-  }
-
-  simpleAction() {
-    this.props.SimpleAction();
   }
 
   addAction() {
@@ -22,31 +22,41 @@ class App extends Component {
   removeAction() {
     this.props.SimpleRemoveAction();
   }
+
+  handleVisible() {
+    this.props.SimpleVisibleAction();
+  }
   render() {
     return (
       <div>
         <p>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={this.simpleAction}>Test redux action</button>
         <button onClick={this.addAction}>Add one</button>
         <button onClick={this.removeAction}>Remove one</button>
-        <p>{this.props.SimpleReducer.nb}</p>
-        <pre>{JSON.stringify(this.props)}</pre>
+
+        <button onClick={this.handleVisible}>
+          Rendre Visible/Invisible le message
+        </button>
+        {this.props.visible && <Display nb={this.props.nb} />}
       </div>
     );
   }
 }
 
+/*
+  This is props from state
+*/
 const mapStateToProps = state => ({
-  ...state
+  nb: state.SimpleReducer.nb,
+  visible: state.Visiblereducer.visible
 });
 const mapDispatchToProps = dispatch => ({
-  SimpleAction: () => dispatch(SimpleAction()),
   SimpleAddAction: () => dispatch(SimpleAddAction()),
-  SimpleRemoveAction: () => dispatch(SimpleRemoveAction())
+  SimpleRemoveAction: () => dispatch(SimpleRemoveAction()),
+  SimpleVisibleAction: () => dispatch(SimpleVisibleAction())
 });
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(AppContainer);

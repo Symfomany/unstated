@@ -22,4 +22,4 @@ const SimpleVisibleAction = () => dispatch => {
   dispatch({ type: SIMPLE_VISIBLE, payload: null });
 };
 
-export { SimpleAddAction, SimpleRemoveAction, SimpleVisibleAction };
+export { SimpleAddAction, SimpleRemoveAction };

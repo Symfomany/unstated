@@ -16,7 +16,7 @@ const SimpleReducer = (state = initialState, action) => {
     case SIMPLE_ADD_ACTION:
       return { ...state, ...{ nb: state.nb + action.payload } };
     case SIMPLE_REMOVE_ACTION:
-      return { ...state, ...{ nb: state.nb - action.payload } };
+      return { nb: state.nb - action.payload };
     default:
       return state;
   }

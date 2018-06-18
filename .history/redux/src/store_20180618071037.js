@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk"; // For Async Operation
-import RootReducer from "./reducers"; // Root redcers is the base
+import thunk from "redux-thunk";
+import RootReducer from "./reducers";
 import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 

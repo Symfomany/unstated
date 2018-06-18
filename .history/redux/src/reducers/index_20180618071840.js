@@ -2,9 +2,7 @@ import { combineReducers } from "redux";
 import SimpleReducer from "./SimpleReducer";
 import VisibleReducer from "./VisibleReducer";
 
-const RootReducer = combineReducers({
+export default combineReducers({
   SimpleReducer,
   VisibleReducer
 });
-
-export default RootReducer;

@@ -1,8 +1,4 @@
-import {
-  SIMPLE_ADD_ACTION,
-  SIMPLE_REMOVE_ACTION,
-  SIMPLE_VISIBLE
-} from "../constants";
+import { SIMPLE_ADD_ACTION, SIMPLE_REMOVE_ACTION } from "../constants";
 
 /*
 Actions are payloads of information that send data from your application to your store. 
@@ -18,8 +14,4 @@ const SimpleAddAction = () => dispatch => {
   dispatch({ type: SIMPLE_ADD_ACTION, payload: 1 });
 };
 
-const SimpleVisibleAction = () => dispatch => {
-  dispatch({ type: SIMPLE_VISIBLE, payload: null });
-};
-
-export { SimpleAddAction, SimpleRemoveAction, SimpleVisibleAction };
+export { SimpleAddAction, SimpleRemoveAction };
